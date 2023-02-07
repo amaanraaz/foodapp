@@ -9,7 +9,7 @@
 119C:\Users\hp\OneDrive\Desktop\lcomernbootcamp\react\foodapp\node_modules\caniuse-lite\data\features\css-rebeccapurple.js121436361000000000 0
 121C:\Users\hp\OneDrive\Desktop\lcomernbootcamp\react\foodapp\node_modules\htmlnano\lib\modules\collapseBooleanAttributes.js121436361000000000 0
 69C:\Users\hp\OneDrive\Desktop\lcomernbootcamp\react\foodapp\.gitignore133201641819477883 0
-63C:\Users\hp\OneDrive\Desktop\lcomernbootcamp\react\foodapp\dist133201658622602776 1
+63C:\Users\hp\OneDrive\Desktop\lcomernbootcamp\react\foodapp\dist133202718748120685 1
 103C:\Users\hp\OneDrive\Desktop\lcomernbootcamp\react\foodapp\node_modules\@parcel\workers\src\Profiler.js121436361000000000 0
 92C:\Users\hp\OneDrive\Desktop\lcomernbootcamp\react\foodapp\node_modules\msgpackr-extract\src133196396065832381 1
 103C:\Users\hp\OneDrive\Desktop\lcomernbootcamp\react\foodapp\node_modules\caniuse-lite\data\regions\SZ.js121436361000000000 0
@@ -79,7 +79,7 @@
 76C:\Users\hp\OneDrive\Desktop\lcomernbootcamp\react\foodapp\node_modules\.bin133196407701620356 1
 116C:\Users\hp\OneDrive\Desktop\lcomernbootcamp\react\foodapp\node_modules\caniuse-lite\data\features\battery-status.js121436361000000000 0
 92C:\Users\hp\OneDrive\Desktop\lcomernbootcamp\react\foodapp\node_modules\terser\lib\minify.js121436361000000000 0
-81C:\Users\hp\OneDrive\Desktop\lcomernbootcamp\react\foodapp\src\components\Body.js133201658620296302 0
+81C:\Users\hp\OneDrive\Desktop\lcomernbootcamp\react\foodapp\src\components\Body.js133202719041807811 0
 90C:\Users\hp\OneDrive\Desktop\lcomernbootcamp\react\foodapp\node_modules\terser\lib\size.js121436361000000000 0
 103C:\Users\hp\OneDrive\Desktop\lcomernbootcamp\react\foodapp\node_modules\caniuse-lite\data\regions\CD.js121436361000000000 0
 81C:\Users\hp\OneDrive\Desktop\lcomernbootcamp\react\foodapp\node_modules\callsites133196396060487687 1
@@ -3581,7 +3581,7 @@
 120C:\Users\hp\OneDrive\Desktop\lcomernbootcamp\react\foodapp\node_modules\@swc\helpers\lib\_check_private_redeclaration.js133133340060000000 0
 127C:\Users\hp\OneDrive\Desktop\lcomernbootcamp\react\foodapp\node_modules\@swc\helpers\lib\_class_apply_descriptor_destructure.js133133340060000000 0
 119C:\Users\hp\OneDrive\Desktop\lcomernbootcamp\react\foodapp\node_modules\@swc\helpers\lib\_class_apply_descriptor_get.js133133340060000000 0
-85C:\Users\hp\OneDrive\Desktop\lcomernbootcamp\react\foodapp\dist\index.7271efb6.js.map133201658622562904 0
+85C:\Users\hp\OneDrive\Desktop\lcomernbootcamp\react\foodapp\dist\index.7271efb6.js.map133202718748093975 0
 119C:\Users\hp\OneDrive\Desktop\lcomernbootcamp\react\foodapp\node_modules\@swc\helpers\lib\_class_apply_descriptor_set.js133133340060000000 0
 136C:\Users\hp\OneDrive\Desktop\lcomernbootcamp\react\foodapp\node_modules\@swc\helpers\lib\_class_check_private_static_field_descriptor.js133133340060000000 0
 123C:\Users\hp\OneDrive\Desktop\lcomernbootcamp\react\foodapp\node_modules\@swc\helpers\lib\_class_extract_field_descriptor.js133133340060000000 0
@@ -4027,7 +4027,7 @@
 119C:\Users\hp\OneDrive\Desktop\lcomernbootcamp\react\foodapp\node_modules\@parcel\node-resolver-core\test\fixture\env-dep133196396169969911 1
 118C:\Users\hp\OneDrive\Desktop\lcomernbootcamp\react\foodapp\node_modules\@parcel\node-resolver-core\test\fixture\nested133196396166835174 1
 150C:\Users\hp\OneDrive\Desktop\lcomernbootcamp\react\foodapp\node_modules\@parcel\node-resolver-core\test\fixture\packages\source-alias-glob\src\test.js121436361000000000 0
-81C:\Users\hp\OneDrive\Desktop\lcomernbootcamp\react\foodapp\dist\index.7271efb6.js133201658622285609 0
+81C:\Users\hp\OneDrive\Desktop\lcomernbootcamp\react\foodapp\dist\index.7271efb6.js133202718747917140 0
 141C:\Users\hp\OneDrive\Desktop\lcomernbootcamp\react\foodapp\node_modules\@parcel\node-resolver-core\test\fixture\packages\source-alias\dist.js121436361000000000 0
 146C:\Users\hp\OneDrive\Desktop\lcomernbootcamp\react\foodapp\node_modules\@parcel\node-resolver-core\test\fixture\packages\source-alias\package.json121436361000000000 0
 135C:\Users\hp\OneDrive\Desktop\lcomernbootcamp\react\foodapp\node_modules\@parcel\node-resolver-core\test\fixture\packages\source\dist.js121436361000000000 0
@@ -4250,7 +4250,7 @@
 93C:\Users\hp\OneDrive\Desktop\lcomernbootcamp\react\foodapp\node_modules\@parcel\cache\LICENSE121436361000000000 0
 100C:\Users\hp\OneDrive\Desktop\lcomernbootcamp\react\foodapp\node_modules\@parcel\cache\src\FSCache.js121436361000000000 0
 109C:\Users\hp\OneDrive\Desktop\lcomernbootcamp\react\foodapp\node_modules\@parcel\cache\src\IDBCache.browser.js121436361000000000 0
-74C:\Users\hp\OneDrive\Desktop\lcomernbootcamp\react\foodapp\dist\index.html133201653169064183 0
+74C:\Users\hp\OneDrive\Desktop\lcomernbootcamp\react\foodapp\dist\index.html133202704062964242 0
 102C:\Users\hp\OneDrive\Desktop\lcomernbootcamp\react\foodapp\node_modules\@parcel\cache\src\LMDBCache.js121436361000000000 0
 100C:\Users\hp\OneDrive\Desktop\lcomernbootcamp\react\foodapp\node_modules\@parcel\cache\lib\FSCache.js121436361000000000 0
 109C:\Users\hp\OneDrive\Desktop\lcomernbootcamp\react\foodapp\node_modules\@parcel\cache\lib\IDBCache.browser.js121436361000000000 0
@@ -4471,5 +4471,5 @@
 87C:\Users\hp\OneDrive\Desktop\lcomernbootcamp\react\foodapp\node_modules\.bin\semver.cmd133196396359474068 0
 87C:\Users\hp\OneDrive\Desktop\lcomernbootcamp\react\foodapp\node_modules\.bin\semver.ps1133196396359474068 0
 81C:\Users\hp\OneDrive\Desktop\lcomernbootcamp\react\foodapp\dist\index.7826abd7.js133201640722506642 0
-82C:\Users\hp\OneDrive\Desktop\lcomernbootcamp\react\foodapp\dist\index.9e4c6fd2.css133201657724861374 0
-86C:\Users\hp\OneDrive\Desktop\lcomernbootcamp\react\foodapp\dist\index.9e4c6fd2.css.map133201657725031079 0
+82C:\Users\hp\OneDrive\Desktop\lcomernbootcamp\react\foodapp\dist\index.9e4c6fd2.css133202704062280176 0
+86C:\Users\hp\OneDrive\Desktop\lcomernbootcamp\react\foodapp\dist\index.9e4c6fd2.css.map133202704062356156 0
