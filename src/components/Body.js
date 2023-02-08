@@ -1,5 +1,5 @@
 import { IMG_CDN_URL, restrauntList } from "../constants";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const RestrauntCard = ({
     name,
@@ -30,9 +30,13 @@ const RestrauntCard = ({
   }
 
 
+  
   const Body = () => {
     const [restaurants,setRestaurants] = useState(restrauntList);
     const [searchText,setSearchText] = useState("");
+    useEffect({
+
+    },[])
     return (
       <>
       <div className="search-bar">
