@@ -1,7 +1,6 @@
 {
   "name": "foodapp",
   "version": "1.0.0",
-  "description": "",
   "main": "App.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -15,5 +14,14 @@
   },
   "devDependencies": {
     "process": "^0.11.10"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amaanraaz/foodapp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/amaanraaz/foodapp/issues"
+  },
+  "homepage": "https://github.com/amaanraaz/foodapp#readme",
+  "description": ""
 }

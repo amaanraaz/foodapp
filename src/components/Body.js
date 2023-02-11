@@ -1,25 +1,6 @@
 import { IMG_CDN_URL, restrauntList } from "../constants";
 import { useEffect, useState } from "react";
-
-const RestrauntCard = ({
-    name,
-    cuisines,
-    cloudinaryImageId,
-    lastMileTravelString,
-  }) => {
-    return (
-      <div className="card">
-        <img
-          src={
-             IMG_CDN_URL + cloudinaryImageId
-          }
-        />
-        <h2>{name}</h2>
-        <h3>{cuisines.join(", ")}</h3>
-        <h4>{lastMileTravelString} minutes</h4>
-      </div>
-    );
-  };
+import RestrauntCard from "./RestrauntCard";
 
   function filterData (searchText,restaurants){
     const filterData = restaurants.filter((restaurant)=>
@@ -29,14 +10,20 @@ const RestrauntCard = ({
     return filterData;
   }
 
-
-  
   const Body = () => {
     const [restaurants,setRestaurants] = useState(restrauntList);
     const [searchText,setSearchText] = useState("");
-    useEffect({
+    useEffect(()=>{
+      getRestaurants();
+    },[]);
 
-    },[])
+    async function getRestaurants(){
+      const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.5355161&lng=77.3910265&page_type=DESKTOP_WEB_LISTING");
+      const json = await data.json();
+      console.log(json);
+      setRestaurants(json.data.cards[2].data.data.cards)
+    }
+
     return (
       <>
       <div className="search-bar">
