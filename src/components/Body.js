@@ -12,7 +12,7 @@ import Shimmer from "./Shimmer";
 
   const Body = () => {
     const [restaurants,setRestaurants] = useState([]);
-    const[filteredRestaurants,setFilteredRestaurants] = useState([]);
+    const [filteredRestaurants,setFilteredRestaurants] = useState([]);
     const [searchText,setSearchText] = useState("");
 
     useEffect(()=>{
@@ -22,7 +22,6 @@ import Shimmer from "./Shimmer";
     async function getRestaurants(){
       const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.5355161&lng=77.3910265&page_type=DESKTOP_WEB_LISTING");
       const json = await data.json();
-      console.log(json);
       setRestaurants(json.data.cards[2].data.data.cards);
       setFilteredRestaurants(json.data.cards[2].data.data.cards);
     }
