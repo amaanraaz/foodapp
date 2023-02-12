@@ -29,9 +29,16 @@
   width: 100%;
 }
 
-.restaurant-list {
+.restaurant-list, .shimmer-container {
   flex-wrap: wrap;
   display: flex;
+}
+
+.shimmer-box {
+  width: 200px;
+  height: 200px;
+  background-color: #f0e9e9;
+  border: 1px solid #fff;
 }
 
 /*# sourceMappingURL=index.9e4c6fd2.css.map */
