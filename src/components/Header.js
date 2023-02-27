@@ -27,7 +27,7 @@ const Header = () => {
             <Link to="/contact">
               <li>Contact</li>
             </Link>
-            <h1>{isOnline?"yes":"No"}</h1>
+            <h1>{isOnline?"✅":"🔴"}</h1>
             <li>Cart</li>
           </ul>
         </div>

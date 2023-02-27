@@ -2,7 +2,9 @@ import { useEffect, useState } from "react";
 import RestrauntCard from "./RestrauntCard";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
-import {filterData} from "../../utils/helper"
+import {filterData} from "../../utils/helper";
+import useOnline from "../../utils/useOnline";
+import Offline from "./Offline";
   
 
   const Body = () => {
@@ -23,6 +25,12 @@ import {filterData} from "../../utils/helper"
 
     // if(filteredRestaurants.length===0)
     //   return <h1>No matched restaurant found!! </h1>
+    const isOnline = useOnline();
+    if(!isOnline)return(
+      <>
+        <Offline />
+      </>
+    )
 
     return (restaurants.length===0)? <Shimmer /> : (
       <>
