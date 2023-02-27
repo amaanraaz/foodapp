@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import useOnline from "../../utils/useOnline";
 
 const Title = () => (
     <a href="/">
@@ -11,6 +12,7 @@ const Title = () => (
   );
   
 const Header = () => {
+  const isOnline = useOnline();
     return (
       <div className="header">
         <Title />
@@ -25,6 +27,7 @@ const Header = () => {
             <Link to="/contact">
               <li>Contact</li>
             </Link>
+            <h1>{isOnline?"yes":"No"}</h1>
             <li>Cart</li>
           </ul>
         </div>
