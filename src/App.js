@@ -12,11 +12,11 @@ import { createBrowserRouter, RouterProvider, Outlet} from "react-router-dom";
 
 const AppLayout = () => {
   return (
-    <>
+    <div className="bg-black">
       <Header />
       <Outlet />
       <Footer />
-    </>
+    </div>
   );
 };
 

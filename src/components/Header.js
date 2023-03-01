@@ -1,12 +1,13 @@
 import { Link } from "react-router-dom";
 import useOnline from "../../utils/useOnline";
+import logo from "../assets/fooApp.png";
 
 const Title = () => (
     <a href="/">
       <img
-        className="logo"
+        className="w-20"
         alt="logo"
-        src="https://yt3.ggpht.com/ytc/AMLnZu_EC-ECXAxRAixWGEfMsE1rdSoetBHyxmLNdtCB=s900-c-k-c0x00ffffff-no-rj"
+        src={logo}
       />
     </a>
   );
@@ -14,24 +15,25 @@ const Title = () => (
 const Header = () => {
   const isOnline = useOnline();
     return (
-      <div className="header">
+      <div className="flex justify-between bg-gradient-to-r from-pink to-violet h-20 shadow-xl items-center rounded-b-xl">
         <Title />
-        <div className="nav-items">
-          <ul>
+        <div >
+          <ul className="flex justify-between ">
             <Link to="/">
-              <li>Home</li>
+              <li className="mx-10 font-display text-lg font-semibold">Home</li>
             </Link>
             <Link to="/about">
-              <li>About</li>
+              <li className="mx-10 font-display text-lg font-semibold">About</li>
             </Link>
             <Link to="/contact">
-              <li>Contact</li>
+              <li className="mx-10 font-display text-lg font-semibold">Contact</li>
             </Link>
-            <h1>{isOnline?"✅":"🔴"}</h1>
-            <li>Cart</li>
           </ul>
         </div>
-      </div>
+          <h1>{isOnline?"✅":"🔴"}</h1>
+          <h3 className="text-white mr-7 fon
+          t-display">Cart</h3>
+        </div>
     );
   };
 
