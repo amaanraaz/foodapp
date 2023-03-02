@@ -13,7 +13,7 @@ module.exports = {
         'violet': "#6A1B4D"
       },
       height:{
-        'full': "75vh",
+        'full': "100vh",
       },
     },
   },
