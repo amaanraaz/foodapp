@@ -28,9 +28,13 @@ const Header = () => {
             <Link to="/contact">
               <li className="mx-10 font-display text-lg font-semibold">Contact</li>
             </Link>
+            <Link to="/accordian">
+              <li className="mx-10 font-display text-lg font-semibold">Accordian</li>
+            </Link>
           </ul>
         </div>
           <h1>{isOnline?"✅":"🔴"}</h1>
+
           <h3 className="text-white mr-7 fon
           t-display">Cart</h3>
         </div>

@@ -9,13 +9,14 @@ import Contact from "./components/Contact";
 import RestaurantMenu from "./components/RestaurantMenu";
 //using react-router-dom after installing 
 import { createBrowserRouter, RouterProvider, Outlet} from "react-router-dom";
+import Accordian from "./components/Accordian";
 
 const AppLayout = () => {
   return (
     <div className="bg-black">
       <Header />
       <Outlet />
-      <Footer />
+      <Footer />      
     </div>
   );
 };
@@ -41,6 +42,10 @@ const appRouter = createBrowserRouter([
       {
         path:"/restaurant/:id",
         element: <RestaurantMenu />
+      },
+      {
+        path:"/accordian",
+        element: <Accordian />
       }
     ]
   }
