@@ -9,10 +9,14 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@emailjs/browser": "^3.10.0",
+    "emailjs": "^4.0.1",
+    "formik": "^2.2.9",
     "parcel": "^2.8.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.8.1"
+    "react-router-dom": "^6.8.1",
+    "yup": "^1.0.2"
   },
   "devDependencies": {
     "postcss": "^8.4.21",
