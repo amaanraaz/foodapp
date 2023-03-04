@@ -10,13 +10,18 @@ import RestaurantMenu from "./components/RestaurantMenu";
 //using react-router-dom after installing 
 import { createBrowserRouter, RouterProvider, Outlet} from "react-router-dom";
 import Accordian from "./components/Accordian";
+import { Provider } from "react-redux";
+import store from "../utils/store";
+import Cart from "./components/Cart";
 
 const AppLayout = () => {
   return (
     <div className="bg-black">
+      <Provider store={store}>
       <Header />
       <Outlet />
-      <Footer />      
+      <Footer />  
+      </Provider>    
     </div>
   );
 };
@@ -46,6 +51,10 @@ const appRouter = createBrowserRouter([
       {
         path:"/accordian",
         element: <Accordian />
+      },
+      {
+        path:"/cart",
+        element: <Cart />
       }
     ]
   }

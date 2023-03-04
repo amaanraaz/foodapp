@@ -1,7 +1,8 @@
 import { useState } from "react";
 
+// the concept used here by passing a set fun as prop from parent to child is known as lifting the state up that means state of child is maintained by parent
 const Section = ({title,description,isVisible,setVisible,hide})=>{
-    console.log(setVisible)
+    // console.log(setVisible)
     // const [isVisible,setIsVisible] = useState();
     return(        
         <div className="mt-2 border border-white">
@@ -10,7 +11,7 @@ const Section = ({title,description,isVisible,setVisible,hide})=>{
                 hide("");
             }}>hide</button>:
             <button className="text-white bg-pink rounded-lg px-2 py-1" onClick={()=>{
-                setVisible(true);
+                setVisible("");
             }}>show</button>}          
             {isVisible && <p className="text-white">{description}</p> }
         </div>

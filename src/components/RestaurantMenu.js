@@ -2,11 +2,19 @@ import { useParams } from "react-router-dom";
 import { IMG_CDN_URL } from "../constants";
 import Shimmer from "./Shimmer";
 import useMenu from "../../utils/useMenu";
+import { useDispatch } from "react-redux";
+import { addItem} from "../../utils/CartSlice";
+import { useState } from "react";
 
 const RestaurantMenu = ()=>{
     const id = useParams();
     //creating a custom hook
     const restaurant = useMenu(id);
+    const dispatch = useDispatch();
+    // const [price,setPrice] = useState(0);
+    const handleAddItem = (item)=>{
+        dispatch(addItem(item));
+    }
     return !restaurant?<Shimmer/>:(
         <>
         <div className="mx-10 my-8 flex justify-between">
@@ -32,7 +40,9 @@ const RestaurantMenu = ()=>{
                                 <h2 className="font-display text-lg text-white">{item.name}</h2> 
                                 <h3 className="font-display text-sm text-gray-400 mt-2 w-96">{item.description}</h3>
                                 <h3 className="font-display text-sm text-gray-400 mt-2">₹{item.price/100}</h3>
-                                <button className="font-normal text-sm text-white pl-2 pr-2 rounded-md bg-violet">Add+</button>
+                                <button className="font-normal text-sm text-white pl-2 pr-2 rounded-md bg-violet"
+                                    onClick={()=>handleAddItem(item)}
+                                >Add+</button>
                            </div>
                            <div>
                            <img src={IMG_CDN_URL+item.cloudinaryImageId} className="w-32 h-32 shadow-gray-600 shadow-lg" alt="no image available"/>

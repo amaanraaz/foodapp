@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import useOnline from "../../utils/useOnline";
 import logo from "../assets/fooApp.png";
+import { useSelector } from "react-redux";
 
 const Title = () => (
     <a href="/">
@@ -13,6 +14,8 @@ const Title = () => (
   );
   
 const Header = () => {
+  const cartItems = useSelector((store)=>store.cart.items);
+  console.log(cartItems);
   const isOnline = useOnline();
     return (
       <div className="flex justify-between bg-gradient-to-r from-pink to-violet h-20 shadow-xl items-center rounded-b-xl">
@@ -34,9 +37,10 @@ const Header = () => {
           </ul>
         </div>
           <h1>{isOnline?"✅":"🔴"}</h1>
-
+        <Link to="/cart">
           <h3 className="text-white mr-7 fon
-          t-display">Cart</h3>
+          t-display">Cart-{cartItems.length}</h3>
+        </Link>
         </div>
     );
   };
