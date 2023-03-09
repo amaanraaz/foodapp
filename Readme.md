@@ -35,3 +35,5 @@ As the app is using swiggy's api so you can get cors error here in order to disa
 - Git and Github
 
 
+[Live](https://foodtestapp.netlify.app/)
+[GitHub](https://github.com/amaanraaz/foodapp)
