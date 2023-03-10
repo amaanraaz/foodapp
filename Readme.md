@@ -4,7 +4,7 @@
 ```
 As the app is using swiggy's api so you can get cors error here in order to disable cors following chrome extension can be used.
 ```
-[CorsAllow](https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf?hl=en)
+[CorsAllow - Download the extension here](https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf?hl=en)
 
 ### Attaching snapshot for example of working ui
 #### Home Page
