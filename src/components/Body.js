@@ -11,7 +11,6 @@ import { FETCH_REST_URL } from "../constants";
   const Body = () => {
     const [restaurants,setRestaurants] = useState([]);
     const [filteredRestaurants,setFilteredRestaurants] = useState([]);
-    const [searchText,setSearchText] = useState("");
 
     useEffect(()=>{
       getRestaurants();
@@ -30,12 +29,11 @@ import { FETCH_REST_URL } from "../constants";
       </>
     )
     const handleFocus = ()=>{
-      setSearchText("");
       setFilteredRestaurants(restaurants);
     }
 
-    const handleSearch = ()=>{
-      const data = filterData(searchText,restaurants);
+    const handleSearch = (text)=>{      
+      const data = filterData(text,restaurants);
           setFilteredRestaurants(data);
     }
 
@@ -43,19 +41,14 @@ import { FETCH_REST_URL } from "../constants";
       <>
       <div className="flex justify-center my-2">
         <input type="text" className="w-80 rounded-l-lg bg-gray-100 font-display placeholder:text-sm outline-violet " 
-        placeholder="Search for restaurant" value={searchText}
+        placeholder="Search for restaurant" 
         onChange={
           (e)=>{
-            setSearchText(e.target.value);
-            handleSearch();
+            handleSearch(e.target.value);
           }
         }
         onBlur = {handleFocus}
         />
-        <button className="font-normal text-sm text-white pl-2 pr-2 rounded-r-md bg-violet" onClick={()=>{
-          handleSearch();
-        }
-        }>Search</button>
       </div>
 
       <div className="flex justify-center flex-wrap">
