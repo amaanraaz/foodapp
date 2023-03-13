@@ -29,6 +29,15 @@ import { FETCH_REST_URL } from "../constants";
         <Offline />
       </>
     )
+    const handleFocus = ()=>{
+      setSearchText("");
+      setFilteredRestaurants(restaurants);
+    }
+
+    const handleSearch = ()=>{
+      const data = filterData(searchText,restaurants);
+          setFilteredRestaurants(data);
+    }
 
     return (restaurants.length===0)? <Shimmer /> : (
       <>
@@ -38,12 +47,13 @@ import { FETCH_REST_URL } from "../constants";
         onChange={
           (e)=>{
             setSearchText(e.target.value);
+            handleSearch();
           }
         }
+        onBlur = {handleFocus}
         />
         <button className="font-normal text-sm text-white pl-2 pr-2 rounded-r-md bg-violet" onClick={()=>{
-          const data = filterData(searchText,restaurants);
-          setFilteredRestaurants(data);
+          handleSearch();
         }
         }>Search</button>
       </div>
@@ -52,7 +62,6 @@ import { FETCH_REST_URL } from "../constants";
         {filteredRestaurants.map((restaurant) => {
           return (
             <Link to={"/restaurant/"+restaurant.data.id} key={restaurant.data.id} >
-              {console.log(restaurant.data)}
                 <RestrauntCard {...restaurant.data} />
             </Link>
           )
