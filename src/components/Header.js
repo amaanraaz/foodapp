@@ -31,8 +31,8 @@ const Header = () => {
             <Link to="/contact">
               <li className="mx-10 font-display text-lg font-semibold">Contact</li>
             </Link>
-            <Link to="/accordian">
-              <li className="mx-10 font-display text-lg font-semibold">Accordian</li>
+            <Link to="/faq">
+              <li className="mx-10 font-display text-lg font-semibold">FAQ's</li>
             </Link>
           </ul>
         </div>

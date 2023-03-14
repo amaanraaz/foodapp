@@ -9,7 +9,7 @@ import Contact from "./components/Contact";
 import RestaurantMenu from "./components/RestaurantMenu";
 //using react-router-dom after installing 
 import { createBrowserRouter, RouterProvider, Outlet} from "react-router-dom";
-import Accordian from "./components/Accordian";
+import FAQ from "./components/FAQ's";
 import { Provider } from "react-redux";
 import store from "../utils/store";
 import Cart from "./components/Cart";
@@ -49,8 +49,8 @@ const appRouter = createBrowserRouter([
         element: <RestaurantMenu />
       },
       {
-        path:"/accordian",
-        element: <Accordian />
+        path:"/faq",
+        element: <FAQ />
       },
       {
         path:"/cart",

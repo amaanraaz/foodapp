@@ -470,11 +470,6 @@ img, video {
   border-bottom-left-radius: .5rem;
 }
 
-.rounded-r-md {
-  border-top-right-radius: .375rem;
-  border-bottom-right-radius: .375rem;
-}
-
 .border {
   border-width: 1px;
 }
