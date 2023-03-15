@@ -37,6 +37,18 @@ import { FETCH_REST_URL } from "../constants";
           setFilteredRestaurants(data);
     }
 
+    // const handleScroll=()=>{
+    //   console.log("scrollllll");
+    // }
+
+    // useEffect(() => {
+    //   window.onscroll = function(ev) {
+    //     if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+    //         handleScroll();
+    //     }
+    // };
+    // }, []);
+
     return (restaurants.length===0)? <Shimmer /> : (
       <>
       <div className="flex justify-center my-2">
