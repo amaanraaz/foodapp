@@ -4,7 +4,7 @@
 ```
 As the app is using swiggy's api so you can get cors error here in order to disable cors following chrome extension can be used.
 ```
-[CorsAllow - Download the extension here](https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf?hl=en)
+[CorsAllow - Click here to Download the extension](https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf?hl=en)
 
 ### Attaching snapshot for example of working ui
 #### Home Page
@@ -17,8 +17,6 @@ As the app is using swiggy's api so you can get cors error here in order to disa
 ![Contact Page](src/assets/working3.jpg)
 #### Cart Page
 ![Cart Page](src/assets/working5.jpg)
-
-
 
 ## All used tools and Libraries
 - VS Code
