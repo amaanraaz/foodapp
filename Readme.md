@@ -35,3 +35,5 @@ As the app is using swiggy's api so you can get cors error here in order to disa
 
 [Live](https://foodtestapp.netlify.app/)
 [GitHub](https://github.com/amaanraaz/foodapp)
+
+### Appended new cors link for removing cors error and to access the link we need to get temporary access from this link https://cors-anywhere.herokuapp.com/corsdemo
