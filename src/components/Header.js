@@ -15,7 +15,6 @@ const Title = () => (
   
 const Header = () => {
   const cartItems = useSelector((store)=>store.cart.items);
-  console.log(cartItems);
   const isOnline = useOnline();
     return (
       <div className="flex justify-between bg-gradient-to-r from-pink to-violet h-20 shadow-xl items-center rounded-b-xl">
