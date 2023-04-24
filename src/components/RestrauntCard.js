@@ -9,7 +9,7 @@ const RestrauntCard = ({
     return (
       <>
       <div className="w-72 h-80 m-5 bg-gradient-to-br from-violet to-pink p-5
-       shadow-gray-600 shadow-md rounded-md transform transition duration-500 hover:scale-110">
+       shadow-gray-600 shadow-md rounded-md">
         <img className="shadow-sm shadow-black"
           src={
              IMG_CDN_URL + cloudinaryImageId
