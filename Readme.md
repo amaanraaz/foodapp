@@ -1,10 +1,6 @@
 ## Food App
 
 - Using swiggy's public Api for getting restaurants and their menu details.
-```
-As the app is using swiggy's api so you can get cors error here in order to disable cors following chrome extension can be used.
-```
-[CorsAllow - Click here to Download the extension](https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf?hl=en)
 
 ### Attaching snapshot for example of working ui
 #### Home Page
@@ -36,4 +32,11 @@ As the app is using swiggy's api so you can get cors error here in order to disa
 [Live](https://foodtestapp.netlify.app/)
 [GitHub](https://github.com/amaanraaz/foodapp)
 
-### Appended new cors link for removing cors error and to access the link we need to get temporary access from this link https://cors-anywhere.herokuapp.com/corsdemo
+### Appended new cors link for removing cors error and to access the link we need to get temporary access from this link https://corsproxy.io/?
+
+## If not loading
+
+```
+As the app is using swiggy's api so you can get cors error here in order to disable cors following chrome extension can be used.
+```
+[CorsAllow - Click here to Download the extension](https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf?hl=en)
