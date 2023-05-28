@@ -11,9 +11,6 @@ const Contact = ()=>{
     const{values,handleChange,handleBlur,handleSubmit,error} = useFormik({
         initialValues,
         onSubmit:(values)=>{
-            // console.log(values);
-            // const message = "Name : "+values.name+"Email : "+values.email+"Message : "+values.desc;
-            // console.log(message);
             emailjs.send('service_qip6ul8','template_t0ckazb',values,'0BMdAhJYaMTI7uU6V').then(()=>{
             alert("email sent")
            });
