@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import useOnline from "../../utils/useOnline";
 import logo from "../assets/fooApp.png";
 import { useSelector } from "react-redux";
+import Location from "./Location";
 
 const Title = () => (
     <a href="/">
@@ -19,6 +20,7 @@ const Header = () => {
     return (
       <div className="flex justify-between bg-gradient-to-r from-pink to-violet h-20 shadow-xl items-center rounded-b-xl">
         <Title />
+        <Location />
         <div >
           <ul className="flex justify-between ">
             <Link to="/">
