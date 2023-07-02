@@ -13,6 +13,7 @@ import { FETCH_REST_URL } from "../constants";
     const [filteredRestaurants,setFilteredRestaurants] = useState([]);
 
     useEffect(()=>{
+      console.log("run");
       getRestaurants();
     },[]);
 
