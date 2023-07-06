@@ -1,4 +1,6 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { addGeocode } from '../../utils/LocationSlice';
 
 function Location() {
   const majorCitiesIndia = [
@@ -23,6 +25,7 @@ function Location() {
     "Patna",
     "Vadodara"
   ];
+  const dispatch = useDispatch();
   
   const [city,selectCity] = useState('Noida');
 
@@ -37,7 +40,9 @@ function Location() {
  async function getGeoCodes(){
   const data = await fetch("https://maps.googleapis.com/maps/api/geocode/json?address="+city+"&key=AIzaSyC47iRhh3By8rUFFWFFMc8RxBYNlO0Y_wA");
   const json = await data.json();
-  console.log(json.results[0].geometry.location);
+  //result as lat and long
+  dispatch(addGeocode(json.results[0].geometry.location))
+  // console.log(json.results[0].geometry.location);
  }
 
   return (

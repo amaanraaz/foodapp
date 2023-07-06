@@ -6,19 +6,23 @@ import {filterData} from "../../utils/helper";
 import useOnline from "../../utils/useOnline";
 import Offline from "./Offline";
 import { FETCH_REST_URL } from "../constants";
+import { useSelector } from "react-redux";
+import store from "../../utils/store";
   
 
   const Body = () => {
     const [restaurants,setRestaurants] = useState([]);
     const [filteredRestaurants,setFilteredRestaurants] = useState([]);
+    const {lat,lng} = useSelector((store)=>store.location.geocode);
+    // console.log(lat,lng);
 
     useEffect(()=>{
-      console.log("run");
       getRestaurants();
-    },[]);
+    },[lat,lng]);
 
     async function getRestaurants(){
-      const data = await fetch(FETCH_REST_URL);
+      // const data = await fetch(FETCH_REST_URL);
+      const data = await fetch("https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=+"+lat+"&lng="+lng+"&page_type=DESKTOP_WEB_LISTING")
       const json = await data.json();
       setRestaurants(json.data.cards[2].data.data.cards);
       setFilteredRestaurants(json.data.cards[2].data.data.cards);
@@ -37,18 +41,6 @@ import { FETCH_REST_URL } from "../constants";
       const data = filterData(text,restaurants);
           setFilteredRestaurants(data);
     }
-
-    // const handleScroll=()=>{
-    //   console.log("scrollllll");
-    // }
-
-    // useEffect(() => {
-    //   window.onscroll = function(ev) {
-    //     if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
-    //         handleScroll();
-    //     }
-    // };
-    // }, []);
 
     return (restaurants.length===0)? <Shimmer /> : (
       <>
