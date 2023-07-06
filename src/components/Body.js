@@ -17,6 +17,7 @@ import store from "../../utils/store";
     // console.log(lat,lng);
 
     useEffect(()=>{
+      setRestaurants([]);
       getRestaurants();
     },[lat,lng]);
 
