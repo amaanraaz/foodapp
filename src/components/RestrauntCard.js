@@ -17,7 +17,7 @@ const RestrauntCard = ({
         />
         <div className="my-4">
           <div className="flex justify-between">
-            <h2 className="text-white font-display font-semibold line-clamp-2 ">{name}</h2>
+            <h2 className="text-white font-display font-semibold ">{name}</h2>
            <div> {
               avgRating>=3
               ?(avgRating>=4?<h2 className="px-1 bg-green-700 rounded-md text-sm text-white">{avgRating}*</h2>
@@ -26,7 +26,7 @@ const RestrauntCard = ({
               :<h2 className="px-1 bg-red-700 rounded-md text-sm text-white">{avgRating}*</h2>
             }</div>
           </div>
-        <h3 className="text-white font-display text-sm my-1">{cuisines.join(", ")}</h3>
+        <h3 className="text-white font-display text-sm my-1 ">{cuisines.join(", ")}</h3>
         <h4 className="text-white font-display text-xs my-1">{lastMileTravelString}</h4>
         </div>
       </div>
