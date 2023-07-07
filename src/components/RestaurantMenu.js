@@ -5,6 +5,7 @@ import useMenu from "../../utils/useMenu";
 import { useDispatch, useSelector } from "react-redux";
 import { addItem} from "../../utils/CartSlice";
 import { useState } from "react";
+import ShimmerMenu from "./ShimmerMenu";
 
 const RestaurantMenu = ()=>{
     const id = useParams();
@@ -19,7 +20,7 @@ const RestaurantMenu = ()=>{
     const handleAddItem = (item)=>{
         dispatch(addItem(item));
     }
-    return !restaurant?<h1 className="text-slate-50">hell</h1>:(
+    return !restaurant?<ShimmerMenu/>:(
         <>
         <div className="mx-10 my-8 flex justify-between">
         {console.log(restaurant)}
@@ -44,7 +45,7 @@ const RestaurantMenu = ()=>{
                             <div>
                                 <h2 className="font-display text-lg text-white">{item.card.info.name}</h2> 
                                 <h3 className="font-display text-sm text-gray-400 mt-2 w-96">{item.card.info.description}</h3>
-                                <h3 className="font-display text-sm text-gray-400 mt-2">₹{item.card.info.price/100}</h3>
+                                <h3 className="font-display text-sm text-gray-400 mt-2">₹ {item.card.info.price/100}</h3>
                                 <button className="font-normal text-sm text-white pl-2 pr-2 rounded-md bg-violet"
                                     onClick={()=>handleAddItem(item)}
                                 >Add+</button>
