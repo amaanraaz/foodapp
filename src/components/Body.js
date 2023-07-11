@@ -23,7 +23,7 @@ import store from "../../utils/store";
 
     async function getRestaurants(){
       // const data = await fetch(FETCH_REST_URL);
-      const data = await fetch("https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=+"+lat+"&lng="+lng+"&page_type=DESKTOP_WEB_LISTING")
+      const data = await fetch("https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=+"+lat+"&lng="+lng+"&page_type=DESKTOP_WEB_LISTING");
       const json = await data.json();
       setRestaurants(json.data.cards[2].data.data.cards);
       setFilteredRestaurants(json.data.cards[2].data.data.cards);
@@ -43,10 +43,7 @@ import store from "../../utils/store";
           setFilteredRestaurants(data);
     }
 
-    // const handleNext = ()=>{
-    //   getNewRestaurant();
-    // }
-
+   
     // async function getNewRestaurant(){
     //   const data = await fetch("https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat="+lat+"&lng="+lng+"&offset=15&sortBy=RELEVANCE&pageType=SEE_ALL&page_type=DESKTOP_SEE_ALL_LISTING");
     //   const json = await data.json();
@@ -56,7 +53,6 @@ import store from "../../utils/store";
     //   setFilteredRestaurants(json.data.cards);
     // }
 
-    // console.log(restaurants,filteredRestaurants);
 
 
     return (restaurants.length===0)? <Shimmer /> : (
