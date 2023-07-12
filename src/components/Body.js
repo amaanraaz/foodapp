@@ -5,28 +5,27 @@ import { Link } from "react-router-dom";
 import {filterData} from "../../utils/helper";
 import useOnline from "../../utils/useOnline";
 import Offline from "./Offline";
-import { FETCH_REST_URL } from "../constants";
 import { useSelector } from "react-redux";
-import store from "../../utils/store";
   
 
   const Body = () => {
     const [restaurants,setRestaurants] = useState([]);
+    const [offset,setOffset] = useState(0);
     const [filteredRestaurants,setFilteredRestaurants] = useState([]);
     const {lat,lng} = useSelector((store)=>store.location.geocode);
-    // console.log(lat,lng);
 
+    // restaurant displays
     useEffect(()=>{
+      console.log(offset);
       setRestaurants([]);
       getRestaurants();
-    },[lat,lng]);
+    },[lat,lng,offset]);
 
     async function getRestaurants(){
-      // const data = await fetch(FETCH_REST_URL);
-      const data = await fetch("https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=+"+lat+"&lng="+lng+"&page_type=DESKTOP_WEB_LISTING");
+      const data = await fetch("https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=+"+lat+"&lng="+lng+"&offset="+offset+"&sortBy=RELEVANCE&pageType=SEE_ALL&page_type=DESKTOP_SEE_ALL_LISTING");
       const json = await data.json();
-      setRestaurants(json.data.cards[2].data.data.cards);
-      setFilteredRestaurants(json.data.cards[2].data.data.cards);
+      setRestaurants(json.data.cards);
+      setFilteredRestaurants(json.data.cards);
     }
     const isOnline = useOnline();
     if(!isOnline)return(
@@ -43,17 +42,10 @@ import store from "../../utils/store";
           setFilteredRestaurants(data);
     }
 
-   
-    // async function getNewRestaurant(){
-    //   const data = await fetch("https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat="+lat+"&lng="+lng+"&offset=15&sortBy=RELEVANCE&pageType=SEE_ALL&page_type=DESKTOP_SEE_ALL_LISTING");
-    //   const json = await data.json();
-    //   // console.log(json);
-    //   console.log(json.data.cards);
-    //   setRestaurants(json.data.cards);
-    //   setFilteredRestaurants(json.data.cards);
-    // }
-
-
+    const handleNext = ()=>{
+      setOffset(offset+15);
+      console.log(offset);
+    }
 
     return (restaurants.length===0)? <Shimmer /> : (
       <>
@@ -72,13 +64,13 @@ import store from "../../utils/store";
       <div className="flex justify-center flex-wrap">
         {filteredRestaurants.map((restaurant) => {
           return (
-            <Link to={"/restaurant/"+restaurant.data.id} key={restaurant.data.id} >
-                <RestrauntCard {...restaurant.data} />
+            <Link to={"/restaurant/"+restaurant.data.data.id} key={restaurant.data.data.id} >
+                <RestrauntCard {...restaurant.data.data} />
             </Link>
           )
         })}
       </div>
-      {/* <button className="text-white" onClick={handleNext}>Next </button> */}
+      <button className="text-white" onClick={handleNext}>Next </button>
       </>
     );
   };
