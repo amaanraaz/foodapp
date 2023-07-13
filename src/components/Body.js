@@ -21,11 +21,26 @@ import { useSelector } from "react-redux";
       getRestaurants();
     },[lat,lng,offset]);
 
+    // for infinite scroll
+    useEffect(()=>{
+      window.addEventListener("scroll",handleInfiniteScroll);
+    },[]);
+
+    const handleInfiniteScroll = ()=>{
+      // console.log("scroll height "+ document.documentElement.scrollHeight);
+      // console.log("view ht "+ window.innerHeight);
+      // console.log("scrolltop" + document.documentElement.scrollTop);
+      if(window.innerHeight+document.documentElement.scrollTop+1>=document.documentElement.scrollHeight){
+        setOffset((prev)=>prev+15);
+      }
+    }
+
     async function getRestaurants(){
       const data = await fetch("https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=+"+lat+"&lng="+lng+"&offset="+offset+"&sortBy=RELEVANCE&pageType=SEE_ALL&page_type=DESKTOP_SEE_ALL_LISTING");
       const json = await data.json();
-      setRestaurants(json.data.cards);
-      setFilteredRestaurants(json.data.cards);
+      setRestaurants((prev)=>[...prev,...json.data.cards]);
+      setFilteredRestaurants((prev)=>[...prev,...json.data.cards]);
+      console.log(restaurants,filteredRestaurants);
     }
     const isOnline = useOnline();
     if(!isOnline)return(
@@ -42,10 +57,10 @@ import { useSelector } from "react-redux";
           setFilteredRestaurants(data);
     }
 
-    const handleNext = ()=>{
-      setOffset(offset+15);
-      console.log(offset);
-    }
+    // const handleNext = ()=>{
+    //   setOffset(offset+15);
+    //   console.log(offset);
+    // }
 
     return (restaurants.length===0)? <Shimmer /> : (
       <>
@@ -70,7 +85,7 @@ import { useSelector } from "react-redux";
           )
         })}
       </div>
-      <button className="text-white" onClick={handleNext}>Next </button>
+      {/* <button className="text-white" onClick={handleNext}>Next </button> */}
       </>
     );
   };
