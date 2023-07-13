@@ -16,7 +16,6 @@ import { useSelector } from "react-redux";
 
     // restaurant displays
     useEffect(()=>{
-      console.log(offset);
       setRestaurants([]);
       getRestaurants();
     },[lat,lng,offset]);
@@ -24,6 +23,7 @@ import { useSelector } from "react-redux";
     // for infinite scroll
     useEffect(()=>{
       window.addEventListener("scroll",handleInfiniteScroll);
+      return ()=> window.removeEventListener("scroll",handleInfiniteScroll);
     },[]);
 
     const handleInfiniteScroll = ()=>{
