@@ -8,7 +8,7 @@ const Contact = ()=>{
         desc: "",
     };
 
-    const{values,handleChange,handleBlur,handleSubmit,error} = useFormik({
+    const{values,handleChange,handleSubmit} = useFormik({
         initialValues,
         onSubmit:(values)=>{
             emailjs.send('service_qip6ul8','template_t0ckazb',values,'0BMdAhJYaMTI7uU6V').then(()=>{
