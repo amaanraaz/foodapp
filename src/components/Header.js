@@ -3,6 +3,8 @@ import useOnline from "../../utils/useOnline";
 import logo from "../assets/fooApp.png";
 import { useSelector } from "react-redux";
 import Location from "./Location";
+import {GiHamburgerMenu} from "react-icons/Gi"
+
 
 const Title = () => (
     <a href="/">
@@ -21,6 +23,7 @@ const Header = () => {
       <div className="flex justify-between bg-gradient-to-r from-pink to-violet h-20 shadow-xl items-center rounded-b-xl">
         <Title />
         <Location />
+        {/* <GiHamburgerMenu /> */}
         <div >
           <ul className="flex justify-between ">
             <Link to="/">
