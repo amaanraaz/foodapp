@@ -17,6 +17,8 @@ import { useSelector } from "react-redux";
     // restaurant displays
     useEffect(()=>{
       setRestaurants([]);
+      if(offset<15){
+      setFilteredRestaurants([]);}
       getRestaurants();
     },[lat,lng,offset]);
 
