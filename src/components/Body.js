@@ -18,7 +18,8 @@ import { useSelector } from "react-redux";
     useEffect(()=>{
       setRestaurants([]);
       if(offset<15){
-      setFilteredRestaurants([]);}
+        setFilteredRestaurants([]);
+      }
       getRestaurants();
     },[lat,lng,offset]);
 
@@ -59,11 +60,6 @@ import { useSelector } from "react-redux";
           setFilteredRestaurants(data);
     }
 
-    // const handleNext = ()=>{
-    //   setOffset(offset+15);
-    //   console.log(offset);
-    // }
-
     return (restaurants.length===0)? <Shimmer /> : (
       <>
       <div className="flex justify-center my-2">
@@ -87,7 +83,6 @@ import { useSelector } from "react-redux";
           )
         })}
       </div>
-      {/* <button className="text-white" onClick={handleNext}>Next </button> */}
       </>
     );
   };
