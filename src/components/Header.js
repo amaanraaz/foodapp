@@ -20,12 +20,12 @@ const Header = () => {
   const cartItems = useSelector((store)=>store.cart.items);
   const isOnline = useOnline();
     return (
-      <div className="flex justify-between bg-gradient-to-r from-pink to-violet h-20 shadow-xl items-center rounded-b-xl">
+      <div className="md:flex justify-between bg-gradient-to-r from-pink to-violet md:h-20 shadow-xl items-center rounded-b-xl">
         <Title />
         <Location />
         {/* <GiHamburgerMenu /> */}
         <div >
-          <ul className="flex justify-between ">
+          <ul className="hidden md:flex justify-between ">
             <Link to="/">
               <li className="mx-10 font-display text-lg font-semibold">Home</li>
             </Link>

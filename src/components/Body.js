@@ -33,7 +33,7 @@ import { useSelector } from "react-redux";
       // console.log("scroll height "+ document.documentElement.scrollHeight);
       // console.log("view ht "+ window.innerHeight);
       // console.log("scrolltop" + document.documentElement.scrollTop);
-      if(window.innerHeight+document.documentElement.scrollTop+1>=document.documentElement.scrollHeight){
+      if(window.innerHeight+document.documentElement.scrollTop+1>=document.documentElement.scrollHeight-100){
         setOffset((prev)=>prev+15);
       }
     }

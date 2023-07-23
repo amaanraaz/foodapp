@@ -20,7 +20,7 @@ const AppLayout = () => {
       <Provider store={store}>
       <Header />
       <Outlet />
-      <Footer />  
+      {/* <Footer />   */}
       </Provider>    
     </div>
   );

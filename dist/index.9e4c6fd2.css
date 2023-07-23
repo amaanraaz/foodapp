@@ -334,6 +334,10 @@ img, video {
   display: flex;
 }
 
+.hidden {
+  display: none;
+}
+
 .h-10 {
   height: 2.5rem;
 }
@@ -425,6 +429,10 @@ img, video {
 
 .w-96 {
   width: 24rem;
+}
+
+.w-full {
+  width: 100%;
 }
 
 .border-spacing-96 {
@@ -782,6 +790,16 @@ img, video {
 .placeholder\:text-sm::placeholder {
   font-size: .875rem;
   line-height: 1.25rem;
+}
+
+@media (min-width: 768px) {
+  .md\:flex {
+    display: flex;
+  }
+
+  .md\:h-20 {
+    height: 5rem;
+  }
 }
 
 /*# sourceMappingURL=index.9e4c6fd2.css.map */

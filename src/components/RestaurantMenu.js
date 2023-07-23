@@ -22,14 +22,13 @@ const RestaurantMenu = ()=>{
     }
     return !restaurant?<ShimmerMenu/>:(
         <>
-        <div className="mx-10 my-8 flex justify-between">
-        {console.log(restaurant)}
+        <div className="mx-10 my-8 md:flex justify-between">
             <div className="h-full">
                 <h1 className="font-display text-2xl font-semibold text-white">{ restaurant[0].card.card.info.name }</h1> 
                 <h3 className="text-sm font-display text-gray-400">{restaurant[0].card.card.info.locality} , { restaurant[0].card.card.info.areaName } , { restaurant[0].card.card.info.city}</h3>
                 <img src={IMG_CDN_URL+restaurant[0].card.card.info?.cloudinaryImageId} className="shadow-gray-400 shadow-lg" />
             </div>
-            <div className="ml-44">
+            <div>
                 <h2 className="font-display text-lg font-semibold text-white">Menu Items:</h2>
                 <h3 
                 className="text-sm font-display text-gray-400">
