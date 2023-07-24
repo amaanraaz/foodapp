@@ -3,7 +3,6 @@ import useOnline from "../../utils/useOnline";
 import logo from "../assets/fooApp.png";
 import { useSelector } from "react-redux";
 import Location from "./Location";
-import {GiHamburgerMenu} from "react-icons/Gi"
 
 
 const Title = () => (
