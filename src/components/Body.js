@@ -6,6 +6,7 @@ import {filterData} from "../../utils/helper";
 import useOnline from "../../utils/useOnline";
 import Offline from "./Offline";
 import { useSelector } from "react-redux";
+import MessageCard from "./MessageCard";
   
 
   const Body = () => {
@@ -60,7 +61,7 @@ import { useSelector } from "react-redux";
           setFilteredRestaurants(data);
     }
 
-    return (restaurants.length===0)? <Shimmer /> : (
+    return (restaurants.length===0)? <Shimmer /> :(filteredRestaurants[0].cardType==="messageCard"?<MessageCard />: (
       <>
       <div className="flex justify-center my-2">
         <input type="text" className="w-80 rounded-l-lg bg-gray-100 font-display placeholder:text-sm outline-violet " 
@@ -84,7 +85,7 @@ import { useSelector } from "react-redux";
         })}
       </div>
       </>
-    );
+    ));
   };
   
 export default Body;

@@ -11,6 +11,7 @@ const useMenu = (id,lat,lng)=>{
         const data = await fetch(FETCH_MENU_URL);
         const json = await data.json();
         setRestaurant(json.data.cards);
+        console.log(restaurant);
     }
     return restaurant;
 }

@@ -1,6 +1,5 @@
 import { useParams } from "react-router-dom";
 import { IMG_CDN_URL } from "../constants";
-import Shimmer from "./Shimmer";
 import useMenu from "../../utils/useMenu";
 import { useDispatch, useSelector } from "react-redux";
 import { addItem} from "../../utils/CartSlice";
@@ -14,12 +13,16 @@ const RestaurantMenu = ()=>{
     //const {lat,lng} = useSelector((store)=>store.location.geocode);
     const {lat,lng} = useSelector((store)=>store.location.geocode);
     const restaurant = useMenu(id,lat,lng);
+    const [addBtnActive,setAddBtn] = useState("hidden")
     // console.log(restaurant);
     // console.log(lat,lng);
     // const [price,setPrice] = useState(0);
     const handleAddItem = (item)=>{
         dispatch(addItem(item));
+        setAddBtn("flex")
     }
+    
+    console.log(restaurant);
     return !restaurant?<ShimmerMenu/>:(
         <>
         <div className="mx-10 my-8 md:flex justify-between">
@@ -38,7 +41,7 @@ const RestaurantMenu = ()=>{
                 {
                     <ul>
                     {
-                        Object.values(restaurant[2].groupedCard.cardGroupMap.REGULAR.cards[1].card.card.itemCards).map((item)=>(
+                        (restaurant[3].groupedCard.cardGroupMap.REGULAR.cards[1].card.card.itemCards).map((item)=>(
                             <li key={item.card.info.id} className="mt-4">
                             <div className="flex justify-between">
                             <div>
@@ -48,6 +51,7 @@ const RestaurantMenu = ()=>{
                                 <button className="font-normal text-sm text-white pl-2 pr-2 rounded-md bg-violet"
                                     onClick={()=>handleAddItem(item)}
                                 >Add+</button>
+                                <h1 className={`text-gray-200 ${addBtnActive}`}>j</h1>
                            </div>
                            <div>
                            <img src={IMG_CDN_URL+item.card.info.imageId} className="w-32 h-32 shadow-gray-600 shadow-lg" alt="no image available"/>
