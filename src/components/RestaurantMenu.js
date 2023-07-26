@@ -10,13 +10,9 @@ const RestaurantMenu = ()=>{
     const id = useParams();
     //creating a custom hook
     const dispatch = useDispatch();
-    //const {lat,lng} = useSelector((store)=>store.location.geocode);
     const {lat,lng} = useSelector((store)=>store.location.geocode);
     const restaurant = useMenu(id,lat,lng);
-    const [addBtnActive,setAddBtn] = useState("hidden")
-    // console.log(restaurant);
-    // console.log(lat,lng);
-    // const [price,setPrice] = useState(0);
+    const [addBtnActive,setAddBtn] = useState("hidden");
     const handleAddItem = (item)=>{
         dispatch(addItem(item));
         setAddBtn("flex")
@@ -35,13 +31,12 @@ const RestaurantMenu = ()=>{
                 <h2 className="font-display text-lg font-semibold text-white">Menu Items:</h2>
                 <h3 
                 className="text-sm font-display text-gray-400">
-                {/* {Object.keys(restaurant.menu.items).length} items recommended */}
                 </h3>
                 <div className="mt-5">
                 {
                     <ul>
                     {
-                        (restaurant[3].groupedCard.cardGroupMap.REGULAR.cards[1].card.card.itemCards).map((item)=>(
+                        (restaurant[2].groupedCard.cardGroupMap.REGULAR.cards[1].card.card.itemCards).map((item)=>(
                             <li key={item.card.info.id} className="mt-4">
                             <div className="flex justify-between">
                             <div>
