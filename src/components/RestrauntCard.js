@@ -3,7 +3,6 @@ const RestrauntCard = ({
     name,
     cuisines,
     cloudinaryImageId,
-    lastMileTravelString,
     avgRating,
   }) => {
     return (
@@ -27,7 +26,7 @@ const RestrauntCard = ({
             }</div>
           </div>
         <h3 className="text-white font-display text-sm my-1 ">{cuisines.join(", ")}</h3>
-        <h4 className="text-white font-display text-xs my-1">{lastMileTravelString}</h4>
+        {/* <h4 className="text-white font-display text-xs my-1">{lastMileTravelString}</h4> */}
         </div>
       </div>
       </>

@@ -40,11 +40,14 @@ import MessageCard from "./MessageCard";
     }
 
     async function getRestaurants(){
-      const data = await fetch("https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=+"+lat+"&lng="+lng+"&offset="+offset+"&sortBy=RELEVANCE&pageType=SEE_ALL&page_type=DESKTOP_SEE_ALL_LISTING");
+      // https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.5355161&lng=77.3910265&offset=0&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING
+      // const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=+"+lat+"&lng="+lng+"&offset="+offset+"&page_type=DESKTOP_WEB_LISTING");
+      const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING");
       const json = await data.json();
-      setRestaurants((prev)=>[...prev,...json.data.cards]);
-      setFilteredRestaurants((prev)=>[...prev,...json.data.cards]);
-      console.log(restaurants,filteredRestaurants);
+      console.log(json);
+      setRestaurants((prev)=>[...prev,...json.data.cards[2].card.card.gridElements.infoWithStyle.restaurants]);
+      setFilteredRestaurants((prev)=>[...prev,...json.data.cards[2].card.card.gridElements.infoWithStyle.restaurants]);
+      // console.log(restaurants,filteredRestaurants);
     }
     const isOnline = useOnline();
     if(!isOnline)return(
@@ -78,8 +81,8 @@ import MessageCard from "./MessageCard";
       <div className="flex justify-center flex-wrap">
         {filteredRestaurants.map((restaurant) => {
           return (
-            <Link to={"/restaurant/"+restaurant.data.data.id} key={restaurant.data.data.id} >
-                <RestrauntCard {...restaurant.data.data} />
+            <Link to={"/restaurant/"+restaurant.info.id} key={restaurant.info.id} >
+                <RestrauntCard {...restaurant.info} />
             </Link>
           )
         })}
