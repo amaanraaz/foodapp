@@ -40,9 +40,11 @@ import MessageCard from "./MessageCard";
     }
 
     async function getRestaurants(){
+      console.log(lat,lng);
       // https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.5355161&lng=77.3910265&offset=0&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING
       // const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=+"+lat+"&lng="+lng+"&offset="+offset+"&page_type=DESKTOP_WEB_LISTING");
-      const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING");
+      // const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat="+lat+"&lng="+lng+"&page_type=DESKTOP_WEB_LISTING");
+      const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat="+lat+"&lng="+lng+"&offset=0&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING")
       const json = await data.json();
       console.log(json);
       setRestaurants((prev)=>[...prev,...json.data.cards[2].card.card.gridElements.infoWithStyle.restaurants]);
