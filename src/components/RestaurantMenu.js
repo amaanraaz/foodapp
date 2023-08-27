@@ -14,6 +14,7 @@ const RestaurantMenu = ()=>{
     const restaurant = useMenu(id,lat,lng);
     const [addBtnActive,setAddBtn] = useState("hidden");
     const handleAddItem = (item)=>{
+        console.log(item);
         dispatch(addItem(item));
         setAddBtn("flex")
     }
@@ -46,7 +47,6 @@ const RestaurantMenu = ()=>{
                                 <button className="font-normal text-sm text-white pl-2 pr-2 rounded-md bg-violet"
                                     onClick={()=>handleAddItem(item)}
                                 >Add+</button>
-                                <h1 className={`text-gray-200 ${addBtnActive}`}>j</h1>
                            </div>
                            <div>
                            <img src={IMG_CDN_URL+item.card.info.imageId} className="w-32 h-32 shadow-gray-600 shadow-lg" alt="no image available"/>
