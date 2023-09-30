@@ -2,8 +2,6 @@ import { useState } from "react";
 
 // the concept used here by passing a set fun as prop from parent to child is known as lifting the state up that means state of child is maintained by parent
 const Section = ({title,description,isVisible,setVisible,hide})=>{
-    // console.log(setVisible)
-    // const [isVisible,setIsVisible] = useState();
     return(        
         <div className="mt-2 border border-white">
             <h3 className="text-white">{title}</h3>
