@@ -12,11 +12,10 @@ const RestaurantMenu = ()=>{
     const dispatch = useDispatch();
     const {lat,lng} = useSelector((store)=>store.location.geocode);
     const restaurant = useMenu(id,lat,lng);
-    const [addBtnActive,setAddBtn] = useState("hidden");
+    const [addBtnActive,setAddBtn] = useState(false);
     const handleAddItem = (item)=>{
-        console.log(item);
         dispatch(addItem(item));
-        setAddBtn("flex")
+        setAddBtn(true)
     }
     
     console.log(restaurant);
@@ -43,9 +42,9 @@ const RestaurantMenu = ()=>{
                             <div>
                                 <h2 className="font-display text-lg text-white">{item.card.info.name}</h2> 
                                 <h3 className="font-display text-sm text-gray-400 mt-2 w-96">{item.card.info.description}</h3>
-                                <h3 className="font-display text-sm text-gray-400 mt-2">₹ {item.card.info.price/100}</h3>
+                                <h3 className="font-display text-sm text-gray-400 mt-2">₹ {item.card.info.defaultPrice/100}</h3>
                                 <button className="font-normal text-sm text-white pl-2 pr-2 rounded-md bg-violet"
-                                    onClick={()=>handleAddItem(item)}
+                                    onClick={()=>handleAddItem(item)} disabled={addBtnActive}
                                 >Add+</button>
                            </div>
                            <div>
