@@ -38,7 +38,7 @@ function Location() {
   },[city]);
 
  async function getGeoCodes(){
-  const data = await fetch("https://maps.googleapis.com/maps/api/geocode/json?address="+city+"&key=AIzaSyC47iRhh3By8rUFFWFFMc8RxBYNlO0Y_wA");
+  const data = await fetch("https://maps.googleapis.com/maps/api/geocode/json?address="+city+"&key="+process.env.REACT_APP_API_KEY);
   const json = await data.json();
   //result as lat and long
   dispatch(addGeocode(json.results[0].geometry.location))
