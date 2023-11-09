@@ -12,13 +12,13 @@ const RestaurantMenu = ()=>{
     const dispatch = useDispatch();
     const {lat,lng} = useSelector((store)=>store.location.geocode);
     const restaurant = useMenu(id,lat,lng);
-    const [addBtnActive,setAddBtn] = useState(false);
+    const [addBtnActive,setAddBtn] = useState([]);
     const handleAddItem = (item)=>{
         dispatch(addItem(item));
-        setAddBtn(true)
+        setAddBtn([...addBtnActive,item.card.info.id]);
     }
-    
     console.log(restaurant);
+
     return !restaurant?<ShimmerMenu/>:(
         <>
         <div className="mx-10 my-8 md:flex justify-between">
@@ -42,10 +42,13 @@ const RestaurantMenu = ()=>{
                             <div>
                                 <h2 className="font-display text-lg text-white">{item.card.info.name}</h2> 
                                 <h3 className="font-display text-sm text-gray-400 mt-2 w-96">{item.card.info.description}</h3>
-                                <h3 className="font-display text-sm text-gray-400 mt-2">₹ {item.card.info.defaultPrice/100}</h3>
-                                <button className="font-normal text-sm text-white pl-2 pr-2 rounded-md bg-violet"
-                                    onClick={()=>handleAddItem(item)} disabled={addBtnActive}
-                                >Add+</button>
+                                <h3 className="font-display text-sm text-gray-400 mt-2">₹ {item.card.info.price/100}</h3>
+                                <button className={`font-normal text-sm pl-2 pr-2 rounded-md
+                                 ${addBtnActive.includes(item.card.info.id)?'bg-gray-500 text-black':'bg-violet text-white'}`}
+                                    onClick={()=>{
+                                        handleAddItem(item)
+                                    }} disabled={addBtnActive.includes(item.card.info.id)}
+                                >{addBtnActive.includes(item.card.info.id)?'Added to cart':'Add+'}</button>
                            </div>
                            <div>
                            <img src={IMG_CDN_URL+item.card.info.imageId} className="w-32 h-32 shadow-gray-600 shadow-lg" alt="no image available"/>

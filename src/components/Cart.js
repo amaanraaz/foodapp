@@ -4,7 +4,6 @@ import ItemAtCartPage from "./ItemAtCartPage";
 const Cart = ()=>{
     const cartItems = useSelector((store)=>store.cart.items);
     const price = useSelector((store)=>store.cart.price);
-    console.log(cartItems);
 
     return(
         <div className="h-fit">

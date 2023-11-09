@@ -40,10 +40,10 @@ import MessageCard from "./MessageCard";
     }
 
     async function getRestaurants(){
-      console.log(lat,lng);
+      // console.log(lat,lng);
       const data = await fetch("https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat="+lat+"&lng="+lng+"&offset="+offset+"&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING")
       const json = await data.json();
-      console.log(json);
+      // console.log(json);
       if(json.data.cards[2].card.card.gridElements){
         setRestaurants((prev)=>[...prev,...json.data.cards[2].card.card.gridElements.infoWithStyle.restaurants]);
         setFilteredRestaurants((prev)=>[...prev,...json.data.cards[2].card.card.gridElements.infoWithStyle.restaurants]);
