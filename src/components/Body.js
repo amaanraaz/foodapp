@@ -46,10 +46,11 @@ import MessageCard from "./MessageCard";
       console.log(json);
       if(json.data.cards[2].card.card.gridElements){
         setRestaurants((prev)=>[...prev,...json.data.cards[2].card.card.gridElements.infoWithStyle.restaurants]);
+        // setRestaurants(json.data.cards[2].card.card.gridElements.infoWithStyle.restaurants);
         setFilteredRestaurants((prev)=>[...prev,...json.data.cards[2].card.card.gridElements.infoWithStyle.restaurants]);
       }
       else{
-        // console.log("nooooo");
+        console.log("nooooo");
         setRestaurants((prev)=>[...prev,...json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants]);
         setFilteredRestaurants((prev)=>[...prev,...json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants]);
       }
@@ -86,7 +87,7 @@ import MessageCard from "./MessageCard";
       </div>
 
       <div className="flex justify-center flex-wrap">
-        {filteredRestaurants.map((restaurant) => {
+        {restaurants.map((restaurant) => {
           return (
             <Link to={"/restaurant/"+restaurant.info.id} key={restaurant.info.id} >
                 <RestrauntCard {...restaurant.info} />
