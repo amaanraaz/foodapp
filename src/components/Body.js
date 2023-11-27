@@ -87,7 +87,7 @@ import MessageCard from "./MessageCard";
       </div>
 
       <div className="flex justify-center flex-wrap">
-        {restaurants.map((restaurant) => {
+        {filteredRestaurants.map((restaurant) => {
           return (
             <Link to={"/restaurant/"+restaurant.info.id} key={restaurant.info.id} >
                 <RestrauntCard {...restaurant.info} />

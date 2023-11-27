@@ -11,7 +11,6 @@ const cartSlice = createSlice({
             console.log(action.payload);
             state.items.push(action.payload);
             state.price+=(action.payload.card.info.price)/100;
-            // console.log(state.price);
         },
         clearCart : (state)=>{
             state.items = [];
