@@ -16,7 +16,7 @@ import Cart from "./components/Cart";
 
 const AppLayout = () => {
   return (
-    <div className="bg-black">
+    <div>
       <Provider store={store}>
       <Header />
       <Outlet />

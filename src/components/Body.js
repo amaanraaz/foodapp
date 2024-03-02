@@ -43,19 +43,14 @@ import MessageCard from "./MessageCard";
       // console.log(lat,lng);
       const data = await fetch(`https://food-app-server-production-5648.up.railway.app/api/swiggy?lat=${lat}&lng=${lng}&offset=${offset}`)
       const json = await data.json();
-      console.log(json);
       if(json.data.cards[2].card.card.gridElements){
         setRestaurants((prev)=>[...prev,...json.data.cards[2].card.card.gridElements.infoWithStyle.restaurants]);
-        // setRestaurants(json.data.cards[2].card.card.gridElements.infoWithStyle.restaurants);
         setFilteredRestaurants((prev)=>[...prev,...json.data.cards[2].card.card.gridElements.infoWithStyle.restaurants]);
       }
       else{
-        console.log("nooooo");
         setRestaurants((prev)=>[...prev,...json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants]);
         setFilteredRestaurants((prev)=>[...prev,...json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants]);
       }
-      // setRestaurants((prev)=>[...prev,...json.data.cards[2].card.card.gridElements.infoWithStyle.restaurants]);
-      // setFilteredRestaurants((prev)=>[...prev,...json.data.cards[2].card.card.gridElements.infoWithStyle.restaurants]);
     }
     const isOnline = useOnline();
     if(!isOnline)return(
@@ -75,7 +70,7 @@ import MessageCard from "./MessageCard";
     return (restaurants.length===0)? <Shimmer /> :(filteredRestaurants[0].cardType==="messageCard"?<MessageCard />: (
       <>
       <div className="flex justify-center my-2">
-        <input type="text" className="w-80 rounded-l-lg bg-gray-100 font-display placeholder:text-sm outline-violet " 
+        <input type="text" className="w-80 rounded-lg bg-gray-100 font-display placeholder:text-sm outline-violet border border-black px-4 " 
         placeholder="Search for restaurant" 
         onChange={
           (e)=>{

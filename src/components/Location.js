@@ -41,7 +41,6 @@ function Location() {
   const data = await fetch("https://maps.googleapis.com/maps/api/geocode/json?address="+city+"&key="+ process.env.REACT_APP_API_KEY);
   const json = await data.json();
   //result as lat and long
-  console.log(process.env.REACT_APP_API_KEY,json);
   dispatch(addGeocode(json.results[0].geometry.location))
   // console.log(json.results[0].geometry.location);
  }
@@ -52,8 +51,8 @@ function Location() {
       <select className='bg-slate-800 px-2 py-1 text-zinc-400' value={city} onChange={handleCityName}>
         <option className='text-zinc-400'>select your location</option>
         {
-          majorCitiesIndia.map((city)=>
-            <option className='text-zinc-400'>{city}</option>
+          majorCitiesIndia.map((city,index)=>
+            <option className='text-zinc-400' key={index}>{city}</option>
           )
         }
       </select>

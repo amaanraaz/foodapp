@@ -8,9 +8,17 @@ const cartSlice = createSlice({
     },
     reducers : {
         addItem : (state,action)=>{
-            console.log(action.payload);
-            state.items.push(action.payload);
-            state.price+=(action.payload.card.info.price)/100;
+            if(action.payload.card.info.price){
+                console.log("1stone",action.payload.card.info.price);
+                state.items.push(action.payload);
+                state.price+=(action.payload.card.info.price)/100;
+            }
+            else{
+                console.log("2ndone",action.payload.card.info.defaultPrice);
+                state.items.push(action.payload);
+                state.price+=(action.payload.card.info.defaultPrice)/100;
+            }
+            
         },
         clearCart : (state)=>{
             state.items = [];
